@@ -1,0 +1,16 @@
+{% extends 'notes_app/base.html' %}
+
+{% block body_block %}
+
+<h1>Delete {{ note.title }}</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger" value="Delete">
+    <a href="{% url 'notes_app:detail' pk=note.pk %}">Cancel</a>
+
+</form>
+
+{% endblock  %}
+
+

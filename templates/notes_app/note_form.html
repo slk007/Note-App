@@ -1,0 +1,17 @@
+{% extends 'notes_app/base.html' %}
+
+{% block body_block %}
+
+    {% if not form.instance.pk %}
+        <h1>CREATE NEW NOTE</h1>
+    {% else %}
+        <h1>UPDATE NOTE</h1>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value='Submit'>
+    </form>
+
+{% endblock  %}

@@ -1,0 +1,14 @@
+{% extends 'notes_app/base.html' %}
+
+{% block body_block %}
+    <h1>HERE ARE ALL YOUR NOTES:</h2>
+    <div class='container'>
+        <p><a class="btn btn-primary" href="{% url 'notes_app:create' %}">Add New</a></p>
+    </div>
+    <ol>
+        {% for note in note_list %}
+        <h2><li><a href="{{ note.id }}">{{ note.title }}</a></li></h2>
+        {% endfor %}
+    </ol>
+    
+{% endblock  %}

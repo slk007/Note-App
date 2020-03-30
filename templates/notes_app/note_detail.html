@@ -1,0 +1,15 @@
+{% extends 'notes_app/base.html' %}
+
+{% block body_block %}
+    <h2>YOUR NOTE:</h2>
+    <div class="container">
+        <h1>Title: {{ note.title }}</h1>
+        <h1>Content: {{ note.content }}</h1>
+        <h3>Created on: {{ note.created_at }}</h3>
+        <h3>Last Updated on: {{ note.upadated_at }}</h3>
+    </div>
+    <div class="container">
+        <p><a class="btn btn-warning" href="{% url 'notes_app:update' pk=note.pk %}">Update</a></p>
+        <p><a class="btn btn-danger" href="{% url 'notes_app:delete' pk=note.pk %}">Delete</a></p>
+    </div>
+{% endblock  %}
