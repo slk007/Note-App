@@ -1,0 +1,18 @@
+{% extends 'notes_app/base.html' %}
+
+{% block body_block %}
+
+    <h1>Register</h1>
+    
+    <form method="POST" action="{% url 'register' %}">
+        {% csrf_token %}
+        {% if form.errors %}
+            <p>Your Form has Errors...</p>
+        {% endif %}
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Register" class="btn btn-secondary">
+    </form>
+{% endblock  %}
+
