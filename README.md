@@ -3,10 +3,10 @@
 a basic django project for user to register, login and then save their NOTES whenever they want
 
 Creating a new project:\
-django-admin startprojext <name>
+django-admin startproject name
 
 Add an app to a project:\
-python lmanage.py startapp <name>
+python manage.py startapp name
 
 Creating a Super User for the admin panel:\
 python manage.py createsuperuser
