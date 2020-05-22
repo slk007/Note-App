@@ -13,28 +13,37 @@
 
     <nav class="nav navbar-default navbar-static-top">
         <ul class="nav navbar-nav">
-            <li class="nav-item"><a href="{% url 'home' %}" class="navbar-brand">Notes</a></li>
-            <li class="nav-item"><a href="{% url 'notes_app:list' %}" class="navbar-link">Your Notes</a></li>
-            <li class="nav-item"><a href="{% url 'notes_app:create' %}" class="navbar-link">Add New Note</a></li>
-            <li class="nav-item"><a href="{% url 'admin:index' %}" class="navbar-link">Admin</a></li>
+            <li class="nav-item">
+                <a href="{% url 'home' %}" class="navbar-brand">Notes</a>
+            </li>
+            <li class="nav-item">
+                    <a href="{% url 'notes_app:list' %}" class="navbar-link">Your Notes</a>
+            </li>
+            {% comment %} <li class="nav-item">
+                <a href="{% url 'admin:index' %}" class="navbar-link">Admin</a>
+            </li> {% endcomment %}
         </ul>
         <ul class="nav navbar-nav ml-auto">
             {% if user.is_authenticated %}
                 <li class="nav-item">
+                    <a href="{% url 'notes_app:create' %}" class="navbar-link">Add New Note</a>
+                </li>
+                <li class="nav-item">
                     <a href="{% url 'logout' %}" class="navbar-link">Logout</a>
                 </li>
             {% else %}
-                <li class="nav-item">
+                <li class="nav-item float-right">
                     <a href="{% url 'register' %}" class="navbar-link">Register</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item float-right">
                     <a href="{% url 'login' %}" class="navbar-link">Login</a>
                 </li>
             {% endif %}
-            
         </ul>
     </nav>
+
     <div class="container">
+
         {% if messages %}
             {% for message in messages %}
                 <div class="alert alert-warning alert-dismissable" role="alert">

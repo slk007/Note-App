@@ -1,3 +1,10 @@
 # Notes
 
-a basic django project for user to register, login and then save their NOTES whenever they want
+
+CREATE
+UPDATE
+DELETE
+LOGIN
+REGISTER
+
+![Screenshot](/Notes_Snap.png)

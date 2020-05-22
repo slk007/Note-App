@@ -1,14 +1,32 @@
 {% extends 'notes_app/base.html' %}
 
 {% block body_block %}
-    <h1>HERE ARE ALL YOUR NOTES:</h2>
-    <div class='container'>
-        <p><a class="btn btn-primary" href="{% url 'notes_app:create' %}">Add New</a></p>
-    </div>
-    <ol>
-        {% for note in note_list %}
-        <h2><li><a href="{{ note.id }}">{{ note.title }}</a></li></h2>
-        {% endfor %}
-    </ol>
+
+    <div class="container">
+        <div class="row">
+        
+            <div class="col-lg-8">
+                {% if note_list %}
+                    <h2>Here are all your notes:</h2>
+                    <ul>
+                        {% for note in note_list %}
+                        <li>
+                            <a href="{{ note.id }}">{{ note.title }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    <h2>No Notes yet</h2>
+                {% endif %}
+            </div>
+
+            <div class='col-lg-4'>
+                <div class="row">
+                    <a class="btn btn-primary" href="{% url 'notes_app:create' %}">Add New</a>
+                </div>
+            </div>
+
+        </div>
+    </div>       
     
 {% endblock  %}
