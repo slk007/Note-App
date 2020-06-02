@@ -1,10 +1,12 @@
 # Notes
 
+[Visit Site](https://notesdj.herokuapp.com/)
 
-CREATE
-UPDATE
-DELETE
-LOGIN
-REGISTER
+* INSIDE
+    * CREATE
+    * UPDATE
+    * DELETE
+    * LOGIN
+    * REGISTER
 
 ![Screenshot](/Notes_Snap.png)
